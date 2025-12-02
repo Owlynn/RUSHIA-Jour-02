@@ -12,6 +12,9 @@ const todoListEl = document.getElementById("todo-list");
 const doneListEl = document.getElementById("done-list");
 const formEl = document.getElementById("task-form");
 const inputEl = document.getElementById("task-input");
+const todoCountEl = document.getElementById("todo-count");
+const doneCountEl = document.getElementById("done-count");
+const totalCountEl = document.getElementById("total-count");
 
 /**
  * Crée un élément <li> pour une tâche
@@ -35,11 +38,32 @@ function createTaskElement(task) {
   meta.className = "task-meta";
   meta.textContent = task.done ? "terminée" : "à faire";
 
+  const deleteBtn = document.createElement("button");
+  deleteBtn.className = "task-delete";
+  deleteBtn.type = "button";
+  deleteBtn.setAttribute("aria-label", "Supprimer la tâche");
+  deleteBtn.textContent = "×";
+  deleteBtn.addEventListener("click", () => deleteTask(task.id));
+
   li.appendChild(checkbox);
   li.appendChild(label);
   li.appendChild(meta);
+  li.appendChild(deleteBtn);
 
   return li;
+}
+
+/**
+ * Met à jour les compteurs de tâches
+ */
+function updateCounters() {
+  const todoCount = tasks.filter((task) => !task.done).length;
+  const doneCount = tasks.filter((task) => task.done).length;
+  const totalCount = tasks.length;
+
+  todoCountEl.textContent = todoCount;
+  doneCountEl.textContent = doneCount;
+  totalCountEl.textContent = totalCount;
 }
 
 /**
@@ -60,6 +84,9 @@ function renderTasks() {
       todoListEl.appendChild(li);
     }
   });
+
+  // Mise à jour des compteurs
+  updateCounters();
 }
 
 /**
@@ -80,12 +107,20 @@ function addTask(label) {
 }
 
 /**
- * Inverse l’état "done" d’une tâche
+ * Inverse l'état "done" d'une tâche
  */
 function toggleTask(id) {
   tasks = tasks.map((task) =>
     task.id === id ? { ...task, done: !task.done } : task
   );
+  renderTasks();
+}
+
+/**
+ * Supprime une tâche de la liste
+ */
+function deleteTask(id) {
+  tasks = tasks.filter((task) => task.id !== id);
   renderTasks();
 }
 

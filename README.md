@@ -15,7 +15,9 @@ Ce projet est une **application web de liste de tâches (todolist)** minimaliste
 - affichage d’une liste de tâches ;
 - possibilité de **cocher/décocher** une tâche ;
 - **séparation visuelle** entre tâches terminées et tâches restantes ;
-- possibilité **d’ajouter une nouvelle tâche**.
+- possibilité **d’ajouter une nouvelle tâche** ;
+- **suppression de tâches** via un bouton dédié sur chaque tâche ;
+- **compteur de tâches** affichant le nombre de tâches à faire et terminées.
 
 Pas de base de données externe : les données sont **simulées/stockées en JSON/in‑memory** côté front, afin de garder une stack simple et facilement maîtrisable pour un premier jour de rush.
 
@@ -76,7 +78,9 @@ L’interface affichera une **todolist simple** :
 - ajout de tâche via un champ dédié ;
 - liste des tâches à faire ;
 - liste des tâches terminées (ou séparation visuelle dans la même liste) ;
-- possibilité de cocher/décocher les tâches.
+- possibilité de cocher/décocher les tâches ;
+- suppression de tâches via un bouton de suppression sur chaque élément ;
+- compteur dynamique affichant le nombre de tâches à faire et terminées.
 
 ---
 
@@ -114,5 +118,21 @@ Aucune explication d’architecture complexe n’est nécessaire ici : **on rest
 - Découverte de l’interface Cursor et des interactions avec l’IA.
 - Création de la première version de la todolist minimaliste.
 - Documentation du projet via ce `README.md`.
+- Ajout des fonctionnalités de suppression de tâches et de compteur dynamique.
+
+---
+
+## Fonctionnalités ajoutées
+
+### Suppression de tâches
+Chaque tâche dispose désormais d’un bouton de suppression (icône poubelle) permettant de retirer définitivement une tâche de la liste, qu’elle soit terminée ou non.
+
+### Compteur de tâches
+Un compteur dynamique affiche en temps réel :
+- le nombre de tâches **à faire** ;
+- le nombre de tâches **terminées** ;
+- le **total** de tâches.
+
+Ces informations sont mises à jour automatiquement lors de l’ajout, de la suppression ou du changement d’état d’une tâche.
 
 Ce README pourra être enrichi au fil du rush si nécessaire (captures d’écran, détails techniques supplémentaires, etc.).
