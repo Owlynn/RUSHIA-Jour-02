@@ -1,17 +1,17 @@
-# RUSH-IA – Jour 01 : Todolist HTML/CSS/JS
+# RUSH-IA – Jour 02 : Todolist HTML/CSS/TypeScript
 
-Projet personnel réalisé dans le cadre du **rush "RUSH-IA" – Jour 1**, dont l’objectif est de :
+Projet personnel réalisé dans le cadre du **rush "RUSH-IA" – Jour 2**, dont l'objectif est de :
 - découvrir l’outil **Cursor** et le **vibe coding** ;
 - prendre en main l’interface et le workflow IA ;
 - produire rapidement un petit projet tout en **gardant la maîtrise de ce qu’on génère**.
 
-Ce dépôt correspond à une **todolist très simple en HTML/CSS/JavaScript vanilla**, réalisée pour se concentrer avant tout sur l’outil.
+Ce dépôt correspond à une **todolist très simple en HTML/CSS/TypeScript**, réalisée pour se concentrer avant tout sur l'outil.
 
 ---
 
 ## Présentation du projet
 
-Ce projet est une **application web de liste de tâches (todolist)** minimaliste, en **pur HTML/CSS/JavaScript** :
+Ce projet est une **application web de liste de tâches (todolist)** minimaliste, en **HTML/CSS/TypeScript** :
 - affichage d’une liste de tâches ;
 - possibilité de **cocher/décocher** une tâche ;
 - **séparation visuelle** entre tâches terminées et tâches restantes ;
@@ -31,22 +31,23 @@ Un aperçu de l’interface de la todolist :
 
 ---
 
-## Contexte "RUSH-IA" – Jour 1
+## Contexte "RUSH-IA" – Jour 2
 
-- **Type de projet** : projet perso dans le cadre d’un rush d’apprentissage.
-- **Thème du jour** : découverte de Cursor et du coding assisté par IA.
-- **Objectif principal** : produire une petite application fonctionnelle rapidement, sans perdre la compréhension du code.
+- **Type de projet** : projet perso dans le cadre d'un rush d'apprentissage.
+- **Thème du jour** : migration vers TypeScript et renforcement du typage.
+- **Objectif principal** : améliorer la qualité du code avec TypeScript, tout en gardant la compréhension du code.
 - **Participants** : nous sommes deux à faire le rush (chacun sur un projet différent).
-- **Règle du jour** : *découvrir l’outil et produire un truc rapidement en gardant la maîtrise de ce qu’on produit*.
+- **Règle du jour** : *améliorer le projet existant avec des outils modernes tout en gardant la maîtrise de ce qu'on produit*.
 
-Il n’y a **pas de roadmap** longue : ce projet est pensé comme un **exercice de Jour 1** ; d’autres projets suivront pour la suite du rush.
+Ce projet est une **évolution du Jour 1** : migration vers TypeScript avec typage renforcé et intégration d'outils de build modernes.
 
 ---
 
 ## Stack technique
 
-- **Technos** : HTML, CSS, JavaScript (vanilla)
+- **Technos** : HTML, CSS, **TypeScript** (avec typage strict)
 - **Build tool** : **Parcel** (pour le bundling et la minification)
+- **Type checking** : **TypeScript** avec configuration stricte
 - **Données** : stockage **JSON simulé** (pas de BDD externe)
 - **Front** : interface web simple, sans framework ni librairies UI (objectif : rester concentré sur l'outil et le code de base).
 
@@ -112,11 +113,12 @@ L'interface affichera une **todolist simple** :
 ## Structure (simplifiée)
 
 Le projet suit une structure **web classique** :
-- un fichier `index.html` comme point d’entrée ;
+- un fichier `index.html` comme point d'entrée ;
 - un ou plusieurs fichiers CSS pour le style ;
-- un ou plusieurs fichiers JavaScript pour la logique de la todolist (gestion de l’état en mémoire, JSON).
+- un fichier TypeScript (`script.ts`) pour la logique de la todolist (gestion de l'état en mémoire, JSON) ;
+- un fichier `tsconfig.json` pour la configuration TypeScript.
 
-Aucune explication d’architecture complexe n’est nécessaire ici : **on reste volontairement sur quelque chose d’hyper simple et classique**.
+Aucune explication d'architecture complexe n'est nécessaire ici : **on reste volontairement sur quelque chose d'hyper simple et classique**, mais avec les avantages du typage TypeScript.
 
 ---
 
@@ -127,37 +129,36 @@ Aucune explication d’architecture complexe n’est nécessaire ici : **on rest
 
 ---
 
-## Objectifs pédagogiques & journal de bord – Jour 1
+## Objectifs pédagogiques & journal de bord – Jour 2
 
-**Objectifs du jour 1**
-- Installer et configurer un projet Next.js basique.
-- Découvrir et pratiquer le **workflow avec Cursor** (génération, édition, navigation).
-- Mettre en place une petite todolist fonctionnelle :
-  - liste de tâches ;
-  - ajout de tâches ;
-  - différenciation entre tâches cochées et non cochées.
-- Garder une **bonne compréhension de tout le code produit**, même avec l’aide de l’IA.
+**Objectifs du jour 2**
+- Migrer le code JavaScript vers **TypeScript** avec typage renforcé.
+- Intégrer **Parcel** pour le bundling et la minification.
+- Améliorer la qualité du code avec des interfaces et des types stricts.
+- Configurer un environnement de développement moderne avec hot-reload.
+- Garder une **bonne compréhension de tout le code produit**, même avec l'aide de l'IA.
 
 **Journal de bord (résumé)**
-- Mise en place du dépôt et de l’environnement Node/Next.
-- Découverte de l’interface Cursor et des interactions avec l’IA.
-- Création de la première version de la todolist minimaliste.
-- Documentation du projet via ce `README.md`.
-- Ajout des fonctionnalités de suppression de tâches et de compteur dynamique.
+- Migration de `script.js` vers `script.ts` avec typage strict.
+- Création d'interfaces TypeScript pour les tâches (`Task`).
+- Ajout de types pour les éléments DOM.
+- Configuration de `tsconfig.json` avec options strictes.
+- Intégration de Parcel pour le build et la minification.
+- Mise en place du hot-reload pour le développement.
 
 ---
 
 ## Fonctionnalités ajoutées
 
-### Suppression de tâches
-Chaque tâche dispose désormais d’un bouton de suppression (icône poubelle) permettant de retirer définitivement une tâche de la liste, qu’elle soit terminée ou non.
+### Jour 1
+- **Suppression de tâches** : Chaque tâche dispose d'un bouton de suppression permettant de retirer définitivement une tâche de la liste.
+- **Compteur de tâches** : Un compteur dynamique affiche en temps réel le nombre de tâches à faire, terminées et le total.
 
-### Compteur de tâches
-Un compteur dynamique affiche en temps réel :
-- le nombre de tâches **à faire** ;
-- le nombre de tâches **terminées** ;
-- le **total** de tâches.
+### Jour 2
+- **Migration vers TypeScript** : Code migré avec typage strict et interfaces bien définies.
+- **Intégration de Parcel** : Build tool pour le bundling et la minification automatique.
+- **Configuration TypeScript stricte** : Vérifications renforcées pour une meilleure qualité de code.
+- **Hot-reload** : Rechargement automatique lors du développement.
+- **Typage des éléments DOM** : Types spécifiques pour tous les éléments DOM utilisés.
 
-Ces informations sont mises à jour automatiquement lors de l’ajout, de la suppression ou du changement d’état d’une tâche.
-
-Ce README pourra être enrichi au fil du rush si nécessaire (captures d’écran, détails techniques supplémentaires, etc.).
+Ce README pourra être enrichi au fil du rush si nécessaire (captures d'écran, détails techniques supplémentaires, etc.).
