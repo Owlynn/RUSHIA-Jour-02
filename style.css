@@ -7,20 +7,6 @@
   padding: 0;
 }
 
-/* Reset des styles par défaut des boutons */
-button {
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
-  margin: 0;
-  padding: 0;
-  border: none;
-  background: none;
-  cursor: pointer;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-}
 
 html,
 body {
