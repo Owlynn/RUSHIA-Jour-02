@@ -1,7 +1,7 @@
 {
   "name": "rushia-jour-02",
   "version": "1.0.0",
-  "description": "Todolist HTML/CSS/JS avec Parcel",
+  "description": "Todolist HTML/CSS/TypeScript avec Parcel",
   "source": "index.html",
   "scripts": {
     "dev": "parcel --open",
@@ -9,7 +9,9 @@
     "start": "parcel --open"
   },
   "devDependencies": {
-    "parcel": "^2.12.0"
+    "@types/node": "^24.10.1",
+    "parcel": "^2.12.0",
+    "typescript": "^5.9.3"
   },
   "targets": {
     "default": {
@@ -17,4 +19,3 @@
     }
   }
 }
-
