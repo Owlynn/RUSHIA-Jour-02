@@ -1,8 +1,13 @@
 // Données "in-memory" simulées (JSON-like) pour démarrer avec quelques tâches
 const initialTasks = [
   { id: 1, label: "Configurer le projet dans Cursor", done: true },
-  { id: 2, label: "Relire le README du rush", done: false },
-  { id: 3, label: "Tester l’ajout / suppression de tâches", done: false }
+  { id: 2, label: "Relire le README du rush", done: true },
+  { id: 3, label: "Tester l’ajout / suppression de tâches", done: true },
+  { id: 4, label: "Ajouter un compteur de tâches", done: true },
+  { id: 5, label: "Ajouter une séparation visuelle entre les tâches", done: true },
+  { id: 6, label: "Ajouter un bouton de suppression pour chaque tâche", done: true },
+  { id: 7, label: "Ajouter un bouton de (dé)cocher pour chaque tâche", done: true },
+  { id: 8, label: "Ajouter un bouton de supprimer pour chaque tâche", done: true }
 ];
 
 let tasks = [...initialTasks];
