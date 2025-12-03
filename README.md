@@ -46,35 +46,60 @@ Il n’y a **pas de roadmap** longue : ce projet est pensé comme un **exercice 
 ## Stack technique
 
 - **Technos** : HTML, CSS, JavaScript (vanilla)
+- **Build tool** : **Parcel** (pour le bundling et la minification)
 - **Données** : stockage **JSON simulé** (pas de BDD externe)
-- **Front** : interface web simple, sans framework ni librairies UI (objectif : rester concentré sur l’outil et le code de base).
+- **Front** : interface web simple, sans framework ni librairies UI (objectif : rester concentré sur l'outil et le code de base).
 
 ---
 
 ## Installation
 
-Il n’y a **aucune installation complexe** :  
-le projet est une simple application front en HTML/CSS/JS.
+Le projet utilise **Parcel** pour le bundling et la minification des sources.
 
 Étapes :
 
 ```bash
 git clone <URL_DU_DEPOT>
-cd RUSHIA-Jour-01
+cd RUSHIA-Jour-02
+npm install
 ```
 
-Ensuite, il suffit d’ouvrir le fichier principal (par ex. `index.html`) dans un navigateur, ou via un petit serveur statique (Live Server, `npx serve`, etc.).
+Cela installera Parcel et toutes les dépendances nécessaires.
 
 ---
 
 ## Lancement du projet
 
-Pour lancer l’application :
-- ouvrir directement `index.html` dans un navigateur,  
-**ou**
-- lancer un petit serveur statique (par exemple avec une extension Live Server ou un outil de dev local).
+### Mode développement
 
-L’interface affichera une **todolist simple** :
+Pour lancer l'application en mode développement avec hot-reload :
+
+```bash
+npm run dev
+```
+
+Parcel démarrera un serveur de développement (généralement sur `http://localhost:1234`) avec rechargement automatique lors des modifications.
+
+### Build de production (avec minification)
+
+Pour créer une version optimisée et minifiée du projet :
+
+```bash
+npm run build
+```
+
+Les fichiers minifiés seront générés dans le dossier `dist/`. Parcel minifie automatiquement :
+- le JavaScript
+- le CSS
+- le HTML
+
+### Utilisation directe (sans Parcel)
+
+Vous pouvez également ouvrir directement `index.html` dans un navigateur, mais vous n'aurez pas les optimisations de Parcel.
+
+---
+
+L'interface affichera une **todolist simple** :
 - ajout de tâche via un champ dédié ;
 - liste des tâches à faire ;
 - liste des tâches terminées (ou séparation visuelle dans la même liste) ;
